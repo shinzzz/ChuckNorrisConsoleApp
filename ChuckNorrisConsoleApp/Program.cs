@@ -12,17 +12,18 @@ namespace ChuckNorrisConsoleApp
     {
         const string _CHUCK_NORRIS_API_BASE = "https://api.chucknorris.io";
         static char _key;
-        static int _JokeID = 1;
+        static int _JokeID = 0;
         private static readonly Dictionary<int, CacheItem> _internalCache = new Dictionary<int, CacheItem>(); 
         static int _CacheJokeID;
 
          public static async Task Main(string[] args)
         {
             PrintScreen("Initial",null, null);
+         
             string[] joke = await GetRandomJokes();
-            Set(_JokeID, joke[0], 3);
-            PrintScreen("NewJoke", _JokeID, joke);
-            
+            //Set(_JokeID, joke[0], 3);
+            //PrintScreen("NewJoke", _JokeID, joke);
+
 
             while (_key != 'e')
             {
